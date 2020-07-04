@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title><%= title %></title>
+    <script>
+      var msg = '<%=msg%>';
+      if(msg){
+        alert(msg);
+      }
+    </script>
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/"> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/assets/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/signup.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/stylesheets/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h2>Sign Up</h2>
+    <p class="lead">Welcome to signup page</p>
+  </div>
+
+  <div class="input">
+    <div class="container">
+      <h4 class="mb-3">Write Information</h4>
+      <form class="needs-validation" action="/signup" method="post" novalidate>
+        <div class="mb-3">
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="name required" value="" required>
+          <div class="invalid-feedback">
+            Valid name is required.
+          </div>
+        </div>
+        <hr class="mb-4">
+        <div class="mb-3">
+          <label for="id">ID</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="id" name="id" placeholder="id required" required>
+            <div class="invalid-feedback">
+              Your id is required.
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <div class="mb-3">
+          <label for="password">Password</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="password" name="password" placeholder="pw required" required>
+            <div class="invalid-feedback">
+              Your password is require.
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <div class="mb-3">
+          <label for="checkPassword">Check Password</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="checkPassword" placeholder="pw check required" required>
+            <div class="invalid-feedback">
+              Check password is not correct.
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted">(Optional)</span></label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+         <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017-2020 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/stylesheets/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="./stylesheets/assets/dist/js/bootstrap.bundle.js"></script>
+        <script src="/javascripts/signupValid.js"></script>
+</body>
+</html>
