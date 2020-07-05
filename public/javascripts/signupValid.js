@@ -7,15 +7,14 @@ function validPassword(password, checkPassword){
   'use strict'
 
   window.addEventListener('load', function () {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
+    var signupForms = document.getElementsByClassName('needs-validation');
 
-    // Loop over them and prevent submission
-    Array.prototype.filter.call(forms, function (form) {
+    Array.prototype.filter.call(signupForms, function (form) {
       form.addEventListener('submit', function (event) {
 
         var password = $('#password').val();
         var checkPassword = $('#checkPassword').val();
+        var target = $('#submitPassword');
 
         if(validPassword(password, checkPassword) === false){
           alert('password is not match');
@@ -27,7 +26,7 @@ function validPassword(password, checkPassword){
           event.preventDefault()
           event.stopPropagation()
         }
-        //form.classList.add('was-validated')
+        encrypting(password, target);
       }, false)
     })
   }, false)

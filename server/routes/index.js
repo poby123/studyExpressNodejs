@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const CryptoJS = require("crypto-js");
 
 const sessionAuth = require('../config/session.js');
 
@@ -8,6 +9,7 @@ router.use(session(sessionAuth));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
   if(req.session.dbid){
       console.log(req.session.dbid);
       res.render('index', {title:'Home',
