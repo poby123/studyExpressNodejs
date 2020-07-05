@@ -12,12 +12,12 @@ router.get('/', function(req, res, next) {
 
   if(req.session.dbid){
       console.log(req.session.dbid);
-      res.render('index', {title:'Home',
+      res.render('index', {title:'Study',
       menuLocation : 'signout', menu : 'Sign out', menuLocation2 : 'myPage', menu2:'My Page',
     });
   }
   else{
-    res.render('index', {title:'Home',
+    res.render('index', {title:'Study',
     menuLocation : 'signin', menu : 'Sign in', menuLocation2 : 'signup', menu2:'Sign Up'});
   }
 });

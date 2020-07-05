@@ -9,7 +9,7 @@ const sessionAuth = require('../config/session.js');
 const router = express.Router();
 const connection = mysql.createPool(dbConfig);
 
-const key = 'CIPHERKEY';
+const KEY = 'CIPHERKEY';
 
 router.use(session(sessionAuth));
 
@@ -69,7 +69,7 @@ router.post('/signin', function(req, res) {
     password: req.body.submitPassword
   };
 
-  let inputBytes = CryptoJS.AES.decrypt(signin.password, 'CIPHERKEY');
+  let inputBytes = CryptoJS.AES.decrypt(signin.password, KEY);
   signin.password = inputBytes.toString(CryptoJS.enc.Utf8);
 
   connection.query('SELECT * FROM tbluser WHERE dbid = ?', [signin.userid], function(err, results) {
