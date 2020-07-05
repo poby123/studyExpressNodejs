@@ -1,6 +1,6 @@
 {
   "name": "express-nodejs",
-  "description" : "Study Nodejs",
+  "description": "Study Nodejs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-mysql-session": "^2.1.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
   }
