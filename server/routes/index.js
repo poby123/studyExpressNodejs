@@ -14,11 +14,14 @@ router.get('/', function(req, res, next) {
       console.log(req.session.dbid);
       res.render('index', {
       menuLocation : 'signout', menu : 'Sign out', menuLocation2 : 'myPage', menu2:'My Page',
+      nav1Location : '/board/qna',nav2Location : '/board/designs',nav3Location : '/board/request',
     });
   }
   else{
     res.render('index', {
-    menuLocation : 'signin', menu : 'Sign in', menuLocation2 : 'signup', menu2:'Sign up today'});
+    menuLocation : 'signin', menu : 'Sign in', menuLocation2 : 'signup', menu2:'Sign up today',
+    nav1Location : '/auth/signin',nav2Location : '/auth/signin',nav3Location : '/auth/signin',
+    });
   }
 });
 

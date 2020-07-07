@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.0.1">
-  <title>Welcome | Wonju  Lee</title>
+  <title>Welcome | Wonju Lee</title>
 
   <!-- Bootstrap core CSS -->
   <link href="/stylesheets/assets/dist/css/bootstrap.css" rel="stylesheet">
@@ -42,7 +43,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="<%=nav1Location%>">Q&A</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%=nav2Location%>">Design & Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%=nav3Location%>">Request</a>
           </li>
         </ul>
         <button class="btn btn-outline-success my-2 my-sm-0" onClick="location.href='/auth/<%=menuLocation%>'"><%=menu%></button>
@@ -55,8 +62,8 @@
           <div class="container">
             <div class="carousel-caption text-left">
               <h1>Welcome</h1>
-              <p>My name is Lee wonju and I'm from South Korea.<br>Currently, I am studying for Full Stack Engineer.<br>
-              If you have some questions please signin and ask through question board.</p>
+              <p>My name is Lee wonju.<br>Currently, I am studying for Full Stack Engineer.<br>
+                If you have some questions please signin and ask through question board.</p>
               <p><a class="btn btn-lg btn-primary" href="/auth/<%=menuLocation2%>" role="button"><%=menu2%></a></p>
             </div>
           </div>
@@ -72,43 +79,31 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <h2>Q&A</h2>
+          <p>Welcome questions about C, C++, JAVA, Javascript, Html, Css and so on. If I know the answer, I'll reply your question.</p>
+          <p><a class="btn btn-secondary" href="<%=nav1Location%>" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
+
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <h2>My Designs & photo</h2>
+          <p>You can see my web designs and photos. There are animation effect such as rain effect, rotation effect and so on.</p>
+          <p><a class="btn btn-secondary" href="<%=nav2Location%>" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
+
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-            risus.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <h2>Request</h2>
+          <p>If you want make your own site or application, please write your request specifically. Then, I will make your own website or application!</p>
+          <p><a class="btn btn-secondary" href="<%=nav3Location%>" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 
       <!-- START THE FEATURETTES -->
 
-      <hr class="featurette-divider">
+    <!--  <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
@@ -157,14 +152,15 @@
       </div>
 
       <hr class="featurette-divider">
-
+-->
       <!-- /END THE FEATURETTES -->
 
-    </div><!-- /.container -->
+  <!--  </div>--><!-- /.container -->
 
-
+<hr class="featurette-divider">
     <!-- FOOTER -->
-    <footer class="container">
+    <footer>
+      <div class="container">
       <p class="float-right"><a href="#">Back to top</a></p>
       <p>&copy; 2020 Wonju Lee </p>
       <p>To Contact</p>
@@ -172,6 +168,7 @@
         <a href="https://github.com/poby123" target="_blank"><img class="contactImg" src="/images/github.jpg"></a>
         <a href="https://hoya123.tistory.com/" target="_blank"><img class="contactImg" src="/images/tistory.png"></a>
       </p>
+    </div>
     </footer>
   </main>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

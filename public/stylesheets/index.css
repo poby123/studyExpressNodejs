@@ -3,8 +3,8 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  margin: 0;
+  /*padding-top: 3rem;*/
   color: #5a5a5a;
 }
 
@@ -14,7 +14,10 @@ body {
 
 /* Carousel base class */
 .carousel {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+}
+.carousel-inner{
+  padding-top: 7rem;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -39,6 +42,9 @@ body {
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
+.marketing{
+  margin-top: 3rem;
+}
 .marketing .col-lg-4 {
   margin-bottom: 1.5rem;
   text-align: center;
@@ -68,6 +74,9 @@ body {
 
 header{
   background-image: url('../images/background1.jpeg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 header nav{
@@ -78,6 +87,9 @@ header nav{
   width : 30px;
   height: 30px;
   margin-left: 10px;
+}
+footer{
+  margin-bottom: 4rem;
 }
 
 /* RESPONSIVE CSS
