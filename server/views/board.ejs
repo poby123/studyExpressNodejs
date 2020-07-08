@@ -1,0 +1,24 @@
+<%- include('./part/header.ejs'); %>
+<section class="board topClass">
+  <div class="container">
+    <h3><%=title%></h3>
+    <p><%=content%></p>
+    <p>글쓴이 : <%=writer%></p>
+    <p>작성일 : <%=registerDate%></p>
+    <p>수정일 : <%=updateDate%></p>
+    <p>카테고리 : <%=category%></p>
+    <%
+      if(writer === id){
+    %>
+        <a href="/board/update?boardNumber=<%=bno%>"><i class="fas fa-pencil-alt"></i></a>
+        <form class="" action="/board/delete" method="post">
+          <input type="hidden" name="boardNumber" value='<%=bno%>'>
+          <input type="hidden" name="category" value="<%=category%>">
+          <button type="submit" name="button"><i class="far fa-trash-alt"></i></button>
+        </form>
+    <%
+      }
+    %>
+  </div>
+</section>
+<%- include('./part/footer.ejs'); %>

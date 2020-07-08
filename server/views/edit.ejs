@@ -1,0 +1,15 @@
+<%- include('./part/header.ejs'); %>
+<section class="writing topClass">
+  <div class="container">
+    <div class="board-state">
+      <h2><%=title%></h2>
+    </div>
+    <form class="writing-form" action="/board/update" method="post">
+      <input type="hidden" name="boardNumber" value="<%=bno%>">
+      <input type="text" name="title" value='<%=board_title%>' required><br><br>
+      <textarea name="content" required><%=content%></textarea><br>
+      <button type="submit" name="button">Save</button>
+    </form>
+  </div>
+</section>
+<%- include('./part/footer.ejs'); %>

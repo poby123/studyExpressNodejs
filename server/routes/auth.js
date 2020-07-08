@@ -68,7 +68,6 @@ router.post('/signin', function(req, res) {
     userid: req.body.id,
     password: req.body.submitPassword
   };
-
   let inputBytes = CryptoJS.AES.decrypt(signin.password, KEY);
   signin.password = inputBytes.toString(CryptoJS.enc.Utf8);
 
@@ -89,10 +88,17 @@ router.post('/signin', function(req, res) {
           res.redirect('/');
         });
       }
-    } else {
+      else {
+        res.render('signin', {
+          title: 'Sign In',
+          msg: 'PASSWORD is Wrong!'
+        });
+      }
+    }
+    else {
       res.render('signin', {
         title: 'Sign In',
-        msg: 'ID or PASSWORD is Wrong!'
+        msg: 'ID or Password is Wrong!'
       });
     }
   });
@@ -119,6 +125,15 @@ router.get('/signout', function(req, res, next) {
   } else {
     console.log('There is no session id but user attempt signout!');
     res.redirect('/');
+  }
+});
+
+/*router mypage get*/
+router.get('/mypage', function(req, res, next) {
+  if (req.session.dbid) {
+    res.render('mypage', {});
+  } else {
+    res.redirect('/auth/signin');
   }
 });
 

@@ -1,0 +1,15 @@
+<%- include('./part/header.ejs'); %>
+<section class="writing topClass">
+  <div class="container">
+    <div class="board-state">
+      <h2><%=title%></h2>
+    </div>
+    <form class="writing-form" action="/board/writing" method="post">
+      <input type="hidden" name="category" value="<%=category%>">
+      <input type="text" name="title" placeholder="title" required><br><br>
+      <textarea name="content" placeholder="content" required></textarea><br>
+      <button type="submit" name="button">Save</button>
+    </form>
+  </div>
+</section>
+<%- include('./part/footer.ejs'); %>

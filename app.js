@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./server/routes/index');
 var authRouter = require('./server/routes/auth');
+var boardRouter = require('./server/routes/board');
 var app = express();
 
 // view engine setup
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //route using
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/board', boardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

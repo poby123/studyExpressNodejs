@@ -1,0 +1,48 @@
+<%- include('./part/header.ejs'); %>
+<section class="qnaList topClass">
+  <div class="container">
+    <div class="board-state">
+      <h2><%=title%></h2>
+      <a href="/board/writing?category=qna" id="writingIcon"><i class="fas fa-plus"></i></a>
+    </div>
+
+    <table>
+      <thead>
+        <th>글쓴이</th>
+        <th>글 제목</th>
+        <th>작성일</th>
+      </thead>
+      <%
+          for (let i = 0; i < rows.length; i++) {
+        %>
+      <tbody>
+        <td><%= rows[i].writer %></td>
+        <td><a href="/board?boardNumber=<%=rows[i].bno%>"><%= rows[i].title %></a></td>
+        <td><%= rows[i].registerDate.toString().substring(0,15) %></td>
+      </tbody>
+      <%
+          }
+        %>
+    </table>
+    <ul class="boardList">
+
+      <%
+          for(let j = 1; j <= list / 20 + 1; j++) {
+            let selected = '';
+            if (`${j}` === nowPage) {
+              selected = 'isSelected';
+            }
+        %>
+      <li>
+        <a href="./qna?page=<%= j %>" id=<%= selected %>>
+          <%= j %>
+        </a>
+      </li>
+      <%
+        }
+        %>
+
+    </ul>
+  </div>
+</section>
+<%- include('./part/footer.ejs'); %>
