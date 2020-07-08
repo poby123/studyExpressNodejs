@@ -131,10 +131,52 @@ router.get('/signout', function(req, res, next) {
 /*router mypage get*/
 router.get('/mypage', function(req, res, next) {
   if (req.session.dbid) {
-    res.render('mypage', {});
+    connection.query('SELECT * FROM tbluser where dbid=?',[req.session.dbid], function(err, results){
+      if(err){
+        console.log(err);
+        res.redirect('/');
+      }
+      res.render('mypage', {
+        title: 'My Page',
+        msg: '',
+        name : results[0].dbNAME,
+        id : results[0].dbid,
+        email : results[0].dbemail,
+      });
+    });
   } else {
     res.redirect('/auth/signin');
   }
 });
+router.post('/mypage', function(req, res, next) {
+  if (req.session.dbid) {
+    connection.query('SELECT * FROM tbluser where dbid=?',[req.session.dbid], function(err, results){
+      if(err){
+        console.log(err);
+        res.redirect('/');
+      }
 
+      let dbBytes = CryptoJS.AES.decrypt(results[0].dbpw, 'CIPHERKEY');
+      results[0].dbpw = dbBytes.toString(CryptoJS.enc.Utf8);
+      let confirmBytes = CryptoJS.AES.decrypt(req.body.confirmPasswordForSubmit, 'CIPHERKEY');
+      let confirmPassword = confirmBytes.toString(CryptoJS.enc.Utf8);
+
+      if(results[0].dbpw === confirmPassword){
+        if(newPasswordForSubmit === ''){
+          
+        }
+      }else{
+        res.render('mypage', {
+          title: 'My Page',
+          msg: 'The Confirm Password is WRONG!',
+          name : results[0].dbNAME,
+          id : results[0].dbid,
+          email : results[0].dbemail,
+        });
+      }
+    });
+  } else {
+    res.redirect('/auth/signin');
+  }
+});
 module.exports = router;

@@ -132,6 +132,28 @@ table{
   font-size: 25px;
 }
 
+/*board*/
+.board a{
+  color : black;
+}
+.board-nav{
+  display: flex;
+  justify-content: space-between;
+}
+.board-form{
+
+}
+.board-menu-container{
+  display: flex;
+  font-size: 25px;
+}
+.board-form button{
+  background: none;
+  border: none;
+  margin-left: 0.5em;
+}
+
+
 /*footer*/
 footer{
   margin-top: 2rem;

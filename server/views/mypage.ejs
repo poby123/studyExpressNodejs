@@ -40,17 +40,17 @@
     <div class="container">
   <div class="py-5 text-center">
     <img class="d-block mx-auto mb-4" src="/stylesheets/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h2>Sign Up</h2>
-    <p class="lead">Welcome to signup page</p>
+    <h2><%=title%></h2>
+    <p class="lead">Welcome to <%=title%></p>
   </div>
 
   <div class="input">
     <div class="container">
       <h4 class="mb-3">Write Information</h4>
-      <form class="signup-validation" action="/auth/signup" method="post" novalidate>
+      <form class="mypage-validation" action="/auth/mypage" method="post" novalidate>
         <div class="mb-3">
           <label for="Name">Name</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="name required" value="" required>
+          <input type="text" class="form-control" id="name" name="name" value="<%=name%>" required>
           <div class="invalid-feedback">
             Valid name is required.
           </div>
@@ -59,43 +59,45 @@
         <div class="mb-3">
           <label for="id">ID</label>
           <div class="input-group">
-            <input type="text" class="form-control" id="id" name="id" placeholder="id required" required>
+            <input type="text" class="form-control" id="id" name="id" value="<%=id%>" disabled>
             <div class="invalid-feedback">
               Your id is required.
             </div>
           </div>
         </div>
         <hr class="mb-4">
-        <div class="mb-3">
-          <label for="password">Password</label>
-          <div class="input-group">
-            <input type="password" class="form-control" id="password" name="password" placeholder="pw required" required>
-            <input type="hidden" id="submitPassword" name="submitPassword">
-            <div class="invalid-feedback">
-              Your password is require.
+        <div class="mypage-changePassword-container">
+          <h5>password change</h5>
+          <div class="mb-3">
+            <label for="password">New Password</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="Optional">
+              <input type="hidden" id="newPasswordForSubmit" name="newPasswordForSubmit">
             </div>
           </div>
-        </div>
-        <hr class="mb-4">
-        <div class="mb-3">
-          <label for="checkPassword">Check Password</label>
-          <div class="input-group">
-            <input type="password" class="form-control" id="checkPassword" placeholder="pw check required" required>
-            <div class="invalid-feedback">
-              Check password is not correct.
+          <hr class="mb-4">
+          <div class="mb-3">
+            <label for="checkPassword">Check New Password</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="checkNewPassword" placeholder="Optional">
             </div>
           </div>
         </div>
         <hr class="mb-4">
         <div class="mb-3">
           <label for="email">Email <span class="text-muted">(Optional)</span></label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
-          <div class="invalid-feedback">
-            Please enter a valid email address.
-          </div>
+          <input type="email" class="form-control" id="email" name="email" value="<%=email%>">
         </div>
          <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to Sign Up</button>
+         <div class="mb-3">
+           <label for="password">Confirm Current Password</label>
+           <div class="input-group">
+             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="pw required" required>
+             <input type="hidden" id="confirmPasswordForSubmit" name="confirmPasswordForSubmit">
+           </div>
+         </div>
+         <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue Modify</button>
       </form>
     </div>
   </div>

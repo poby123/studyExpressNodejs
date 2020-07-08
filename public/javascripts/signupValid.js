@@ -7,7 +7,7 @@ function validPassword(password, checkPassword){
   'use strict'
 
   window.addEventListener('load', function () {
-    var signupForms = document.getElementsByClassName('needs-validation');
+    var signupForms = document.getElementsByClassName('signup-validation');
 
     Array.prototype.filter.call(signupForms, function (form) {
       form.addEventListener('submit', function (event) {
