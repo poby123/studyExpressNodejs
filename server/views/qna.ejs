@@ -3,7 +3,7 @@
   <div class="container">
     <div class="board-state">
       <h2><%=title%></h2>
-      <a href="/board/writing?category=qna" id="writingIcon"><i class="fas fa-plus"></i></a>
+      <a href="/board/writing?category=<%=title%>" id="writingIcon"><i class="fas fa-plus"></i></a>
     </div>
 
     <table>
@@ -34,7 +34,7 @@
             }
         %>
       <li>
-        <a href="./qna?page=<%= j %>" id=<%= selected %>>
+        <a href="/board?category=<%=title%>&page=<%=j%>" id=<%= selected %>>
           <%= j %>
         </a>
       </li>

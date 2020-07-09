@@ -17,9 +17,9 @@ router.get('/', function(req, res, next) {
       menu: 'Sign out',
       menuLocation2: '/auth/mypage',
       menu2: 'My Page',
-      nav1Location: '/board/qna?page=1',
-      nav2Location: '/board/designs',
-      nav3Location: '/board/request',
+      nav1Location: '/board?category=qna&page=1',
+      nav2Location: '/board?category=designs&page=1',
+      nav3Location: '/board?category=request&page=1',
     });
   } else {
     res.render('index', {
@@ -27,9 +27,9 @@ router.get('/', function(req, res, next) {
       menu: 'Sign in',
       menuLocation2: '/auth/signup',
       menu2: 'Sign up today',
-      nav1Location: '/auth/signin',
-      nav2Location: '/auth/signin',
-      nav3Location: '/auth/signin',
+      nav1Location: '/board?category=qna&page=1',
+      nav2Location: '/board?category=designs&page=1',
+      nav3Location: '/board?category=request&page=1',
     });
   }
 });
