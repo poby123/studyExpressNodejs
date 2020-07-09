@@ -50,7 +50,7 @@ router.get('/', function(req, res, next) {
         }
         let rows = results.reverse();
         if (!rows[page * 20 - 1]) { //rows[page * 20 - 1] is undefined at last page
-          res.render('qna', {
+          res.render('boardList', {
             title: category,
             rows: rows.slice((page - 1) * 20, rows.length),
             list: rows.length,
@@ -64,7 +64,7 @@ router.get('/', function(req, res, next) {
             nav3Location: '/board?category=request&page=1',
           });
         } else {
-          res.render('qna', {
+          res.render('boardList', {
             title: category,
             rows: rows.slice((page - 1) * 20, page * 20),
             list: rows.length,

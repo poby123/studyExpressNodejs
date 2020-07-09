@@ -37,22 +37,51 @@ body {
   height: 32rem;
 }
 
-
-/* MARKETING CONTENT
+/* profile Content
 -------------------------------------------------- */
+.profile{
+  margin-top: 4rem;
+  line-height: 1.5em;
+}
+.profile img{
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border : 1px solid black;
+  padding : 10px;
+}
+.profile .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* border : 1px solid black; */
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile .image-container{
+  display: block;
+  text-align: center;
+}
+.profile .content-container{
+  display: block;
+  /* margin-left: 2rem; */
+}
 
-/* Center align the text within the three columns below the carousel */
-.marketing{
+
+/* navigation Content
+-------------------------------------------------- */
+.navigation{
   margin-top: 3rem;
 }
-.marketing .col-lg-4 {
+.navigation .col-lg-4 {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-.marketing h2 {
+.navigation h2 {
   font-weight: 400;
 }
-.marketing .col-lg-4 p {
+.navigation .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
 }
@@ -63,13 +92,6 @@ body {
 
 .featurette-divider {
   margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.05rem;
 }
 
 header{
@@ -102,14 +124,10 @@ footer{
     font-size: 1.25rem;
     line-height: 1.4;
   }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
+@media(max-width:768px){
+  .profile .container{
+    display: block;
   }
 }
