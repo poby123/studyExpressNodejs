@@ -14,7 +14,6 @@ router.use(session(sessionAuth));
 router.get('/', function(req, res, next) {
   if (req.session.dbid) {
     let bno = req.query.boardNumber;
-    console.log(bno);
     if(bno){
       console.log('in if bno');
       connection.query('SELECT * FROM tblboard where bno=?', [bno], function(err, results){
@@ -41,7 +40,7 @@ router.get('/', function(req, res, next) {
         });
       });
     }else{
-      console.log('in else bno');
+      console.log('/board bno is :', bno);
       res.redirect('/');
     }
   } else {

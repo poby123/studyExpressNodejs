@@ -4,7 +4,7 @@
 //   password : '12345678',
 //   port : '3306',
 //   database : 'opentutorials'
-// }
+//  }
  module.exports = {
    host : process.env.DB_HOST,
    user : process.env.DB_USER,

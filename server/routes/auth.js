@@ -87,15 +87,13 @@ router.post('/signin', function(req, res) {
           console.log('login Success!, id: ', results[0].dbid);
           res.redirect('/');
         });
-      }
-      else {
+      } else {
         res.render('signin', {
           title: 'Sign In',
           msg: 'PASSWORD is Wrong!'
         });
       }
-    }
-    else {
+    } else {
       res.render('signin', {
         title: 'Sign In',
         msg: 'ID or Password is Wrong!'
@@ -129,29 +127,33 @@ router.get('/signout', function(req, res, next) {
 });
 
 /*router mypage get*/
+let myPageMsg='';
 router.get('/mypage', function(req, res, next) {
   if (req.session.dbid) {
-    connection.query('SELECT * FROM tbluser where dbid=?',[req.session.dbid], function(err, results){
-      if(err){
+    connection.query('SELECT * FROM tbluser where dbid=?', [req.session.dbid], function(err, results) {
+      if (err) {
         console.log(err);
         res.redirect('/');
       }
       res.render('mypage', {
         title: 'My Page',
-        msg: '',
-        name : results[0].dbNAME,
-        id : results[0].dbid,
-        email : results[0].dbemail,
+        msg: myPageMsg,
+        name: results[0].dbNAME,
+        id: results[0].dbid,
+        email: results[0].dbemail,
       });
+      myPageMsg = '';
     });
   } else {
     res.redirect('/auth/signin');
   }
 });
+
 router.post('/mypage', function(req, res, next) {
+    myPageMsg = '';
   if (req.session.dbid) {
-    connection.query('SELECT * FROM tbluser where dbid=?',[req.session.dbid], function(err, results){
-      if(err){
+    connection.query('SELECT * FROM tbluser where dbid=?', [req.session.dbid], function(err, results) {
+      if (err) {
         console.log(err);
         res.redirect('/');
       }
@@ -161,18 +163,33 @@ router.post('/mypage', function(req, res, next) {
       let confirmBytes = CryptoJS.AES.decrypt(req.body.confirmPasswordForSubmit, 'CIPHERKEY');
       let confirmPassword = confirmBytes.toString(CryptoJS.enc.Utf8);
 
-      if(results[0].dbpw === confirmPassword){
-        if(newPasswordForSubmit === ''){
-          
+      if (results[0].dbpw === confirmPassword) {
+        if (req.body.newPasswordForSubmit === '') { //case of not changing password.
+          connection.query('UPDATE tbluser SET dbNAME=?, dbemail=? where dbid=?',
+            [req.body.name, req.body.email, req.session.dbid],
+            function(err, results) {
+              myPageMsg = 'Success!';
+              if(err){
+                console.log(err);
+                myPageMsg = 'Fail, Some Error is occurred. Sorry!';
+              }
+              res.redirect('/auth/mypage');
+            });
+        } else {
+          connection.query('UPDATE tbluser SET dbNAME=?, dbpw=?, dbemail=? where dbid=?',
+            [req.body.name, req.body.newPasswordForSubmit, req.body.email, req.session.dbid],
+            function(err, results) {
+              myPageMsg = 'Success!';
+              if(err){
+                console.log(err);
+                myPageMsg = 'Fail, Some Error is occurred. Sorry!';
+              }
+              res.redirect('/auth/mypage');
+            });
         }
-      }else{
-        res.render('mypage', {
-          title: 'My Page',
-          msg: 'The Confirm Password is WRONG!',
-          name : results[0].dbNAME,
-          id : results[0].dbid,
-          email : results[0].dbemail,
-        });
+      } else {
+        myPageMsg = 'The Confirm Password is WRONG!';
+        res.redirect('/auth/mypage');
       }
     });
   } else {
